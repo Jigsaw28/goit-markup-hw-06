@@ -239,7 +239,7 @@ position: relative;
     letter-spacing: 0.03em;
     text-align: center;
     padding-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 }
 .form .form-field {
     position: relative;
@@ -259,11 +259,22 @@ position: relative;
     height: 40px; 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    padding-left: 42px ;
+    outline-style: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form .input-icon {
     position: absolute;
     top: 50%;
     left: 12px;
+    fill: #212121;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form .form-input:focus {
+    border-color: #2196F3;
+}
+.form .form-input:focus + .input-icon {
+    fill: #2196F3;
 }
 .form .form-label {
     position: absolute;
@@ -292,7 +303,11 @@ position: relative;
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-   
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form .modal-textarea:focus {
+    border-color: #2196F3;
 }
 .form .modal-textarea::placeholder {
     font-size: 12px;
@@ -301,44 +316,15 @@ position: relative;
     color: rgba(117, 117, 117, 0.5);
 }
 .check-line {
+    display: flex;
+    align-items: center;
     width: 425px;
     height: 24px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
 }
 .checkbox-agree {
-    display: flex;
-    align-items: center;
-}
-.checkbox-agree .icon-wrapper {
-    display: inline-block;
-    width: 16px;
-    height: 15px;
-    border: 2px solid #212121;
-    margin-right: 8px;
-    border-radius: 2px;
-}
-.checkbox-agree .agree-icon {
-    fill:transparent;
-}
-.check-line input:checked .checkbox-agree .agree-icon {
-    fill: #fff;
-
-}
-.check-line input:checked .checkbox-agree .icon-wrapper {
-    background-color: #2196F3;
-}
-
-/*.form .form-checkbox {
-    display: flex;
-    align-items: center;
-    width: 425px;
-    height: 24px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.form .check-label {
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -346,35 +332,59 @@ position: relative;
     letter-spacing: 0.03em;
     color: #757575;
 }
-
-.check-label .check-svg {
-    width: 16px;
-    height: 15px;
-    border: 2px solid #212121;
-    border-radius: 2px;
-    margin-right: 8px;
+.checkbox-agree .icon-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    margin-right: 8px;
+    border-radius: 2px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.check-label .check-icon {
-    fill: transparent;
+.checkbox-agree .agree-icon {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.form .input-checkbox:checked .check-label .check-svg {
-    background-color: #2196F3;
-    border: none;
-}
-
-.form .input-checkbox:checked .check-label .check-icon {
+.checkbox-agree .check-input:checked + .icon-wrapper .agree-icon {
     fill: #fff;
-}
+    opacity: 1;
 
-.form .form-link {
+}
+.checkbox-agree .check-input:checked + .icon-wrapper {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+.form .check-link {
     color: #2196F3;
     text-decoration: underline;
-}*/
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ .modal-button {
+    width: 200px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(30/16);
+    color: #FFF;
+    background: #2196F3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-color: #2196F3;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form .modal-button:hover {
+    background-color: #188CE8;;
+}
+
 
 
 /*Особливості*/
@@ -643,7 +653,7 @@ position: relative;
     margin-left: 70px;
 }
 
-.footer .join-up .text {
+.footer .text {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -686,6 +696,54 @@ position: relative;
 .join-up .social-link:hover, .join-up .social-link:focus {
     background-color: #2196F3;
 }
+
+.subscription {
+    margin-left: 93px;
+}
+.subscription .text {
+    display: block;
+}
+.subscription .subscribe-input {
+    width: 358px;
+    height: 50px;
+    padding-left: 16px;
+    margin-right: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: #2F303A;
+    font-size: 16px;
+    line-height: calc(20/16);
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+.subscription .subscribe-input::placeholder {
+    font-size: 16px;
+    line-height: calc(20/16);
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+}
+.subscription .modal-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscription .modal-button::after {
+    content:'';
+    display: inline-block;
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/send.svg);
+}
+.subscription .wrapper {
+    display: flex;
+}
+
+
+
+
 
 /*Сторінка портфоліо*/
 .btn {
