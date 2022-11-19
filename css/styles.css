@@ -300,39 +300,81 @@ position: relative;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
 }
-.form .form-checkbox {
-    position: relative;
+.check-line {
     width: 425px;
     height: 24px;
     margin-left: auto;
     margin-right: auto;
 }
-.form .input-checkbox {
-    
-    appearance: none;
+.checkbox-agree {
+    display: flex;
+    align-items: center;
 }
-    
-.form .check-svg {
-   
-}
-.form .input-checkbox:checked + .check-svg {
-    background: #2196F3;
+.checkbox-agree .icon-wrapper {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    margin-right: 8px;
     border-radius: 2px;
-    background-size: auto;
 }
+.checkbox-agree .agree-icon {
+    fill:transparent;
+}
+.check-line input:checked .checkbox-agree .agree-icon {
+    fill: #fff;
+
+}
+.check-line input:checked .checkbox-agree .icon-wrapper {
+    background-color: #2196F3;
+}
+
+/*.form .form-checkbox {
+    display: flex;
+    align-items: center;
+    width: 425px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .form .check-label {
-    position: absolute;
-    left: 24px;
+    display: flex;
+    align-items: center;
     font-size: 14px;
     line-height: calc(24/14);
     letter-spacing: 0.03em;
     color: #757575;
 }
+
+.check-label .check-svg {
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 2px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-label .check-icon {
+    fill: transparent;
+}
+
+.form .input-checkbox:checked .check-label .check-svg {
+    background-color: #2196F3;
+    border: none;
+}
+
+.form .input-checkbox:checked .check-label .check-icon {
+    fill: #fff;
+}
+
 .form .form-link {
     color: #2196F3;
     text-decoration: underline;
-}
-
+}*/
 
 
 /*Особливості*/

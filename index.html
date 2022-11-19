@@ -97,13 +97,15 @@
             <textarea name="textarea" placeholder="Введіть текст" id="textarea"  class="modal-textarea"></textarea>
             <label for="textarea"  class="form-label">Коментар</label>
             </div>
-            <div class="form-checkbox">
-              <input type="checkbox" id="check" class="input-checkbox" name="check">
-              <span class="check-svg">
-                <svg class="check-icon" width="16" height="15">
-                  <use href="./images/sprite.svg#icon-check"></use>
-                </svg>
-              <label for="check" class="check-label">Погоджуюся з розсилкою та приймаю <a href="" class="form-link">Умови договору</a></label>
+            <div class="check-line">
+              <input type="checkbox" id="check" class="visually-hidden" name="check" value="check">
+              <label for="check" class="checkbox-agree">
+                <span class="icon-wrapper">
+                  <svg class="agree-icon" width="11" height="8">
+                    <use href="./images/sprite.svg#icon-check"></use>
+                  </svg>
+                </span>
+                Погоджуюся з розсилкою та приймаю <a href="" class="check-link">Умови договору</a></label>
             </div>
           </form>
         </div>
